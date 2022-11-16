@@ -49,3 +49,11 @@
   width: 290px;
   height: 190px;
 }
+
+.settingsButton {
+  width: 8em;
+  font-size: 1em;
+  color: rgb(7, 17, 36);
+  padding: 0.3;
+  margin: 1em;
+}

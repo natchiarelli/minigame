@@ -1,25 +1,25 @@
 import React, { PureComponent } from "react";
   
-  function buildLevel(number) {
-    const monsterName = `Monster ${number} `;
+  // function buildLevel(number) {
+  //   const monsterName = `Monster ${number} `;
   
-    return {
-      number: number,
-      monster: {
-        name: monsterName,
-        lifeQuantity: number * 7,
-        imageUrl: `https://i.pinimg.com/originals/74/3a/78/743a7859cb1c46e67e5ab61bda16661e.jpg`
-      }
-    };
-  }
+  //   return {
+  //     number: number,
+  //     monster: {
+  //       name: monsterName,
+  //       lifeQuantity: number * 7,
+  //       imageUrl: `https://i.pinimg.com/originals/74/3a/78/743a7859cb1c46e67e5ab61bda16661e.jpg`
+  //     }
+  //   };
+  // }
   
-  export const gameLevels = [
-    buildLevel(1),
-    buildLevel(2),
-    buildLevel(3),
-    buildLevel(4),
-    buildLevel(5)
-  ];
+  // export const gameLevels = [
+  //   buildLevel(1),
+  //   buildLevel(2),
+  //   buildLevel(3),
+  //   buildLevel(4),
+  //   buildLevel(5)
+  // ];
 
   const attacksDamageMap = {
     SWORD: 5,

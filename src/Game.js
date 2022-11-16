@@ -1,6 +1,7 @@
 import React from "react";
 import LevelScreen from "./GameLevels";
-import { gameLevels } from "./GameLevels";
+import { gameDefaultLevels } from "./Settings";
+import { Link } from "react-router-dom";
 
 class Game extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class Game extends React.Component {
   nextLevel() {
     var { currentLevelNumber } = this.state;
 
-    if (currentLevelNumber >= gameLevels.length) {
+    if (currentLevelNumber >= gameDefaultLevels.length) {
       this.setState({ currentLevelNumber: 0 });
     } else {
       this.setState({ currentLevelNumber: currentLevelNumber + 1 });
@@ -20,7 +21,7 @@ class Game extends React.Component {
 
   render() {
     var { currentLevelNumber } = this.state;
-    var gameIsFinished = currentLevelNumber === gameLevels.length;
+    var gameIsFinished = currentLevelNumber === gameDefaultLevels.length;
 
     if (gameIsFinished) {
       return (
@@ -30,6 +31,7 @@ class Game extends React.Component {
             PLAY AGAIN
           </button>
         </div>
+        
       );
     } else {
       return (
@@ -37,18 +39,20 @@ class Game extends React.Component {
           <header className="App-header">
             <h1>Monsters MiniGame</h1>
             {currentLevelNumber === 0 ? (
-              <button onClick={() => this.nextLevel()} className="startButton">
-                START
-              </button>
+              <><button onClick={() => this.nextLevel()} className="startButton">
+                          START
+                      </button><Link style={{ color: "black" }} to="settings">
+                CONFIGURAÇÕES
+              </Link></>
             ) : (
               <LevelScreen
-                LevelData={gameLevels[currentLevelNumber - 1]}
+                LevelData={gameDefaultLevels[currentLevelNumber - 1]}
                 onFinishLevel={() => this.nextLevel()}
               />
             )}
           </header>
         </div>
-      );
+    );
     }
   }
 }
