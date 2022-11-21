@@ -1,13 +1,13 @@
 import "./styles.css";
 import Game from "./Game";
-import SettingsScreen from "./SettingsScreen";
+import SettingsScreen from "./modules/SettingsScreen";
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Settings, challengeMap } from "./Settings";
-import { gameDefaultLevels } from "./Settings";
+import { Settings, challengeMap } from "./modules/Settings";
+import { gameDefaultLevels } from "./modules/Settings";
 import {useEffect} from 'react'
 
-import { loadMonsters } from "./GameService";
+import { loadMonsters } from "./modules/GameService";
 
 function App() {
   const [gameConfig, setGameConfig] = useState({
